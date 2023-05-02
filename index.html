@@ -8,6 +8,7 @@
       }
 
       button {
+        margin: 1em;
         padding: 1em;
       }
 
@@ -20,13 +21,15 @@
     <h1>PDF Download Test Links</h1>
 
     <a href="PERA8.pdf">Plain HREF</a>
-    <a href="PERA8" target="_blank">Target Blank w/o File Extension</a>
+    <a href="PERA8" target="_blank">Target Blank No File Extension</a>
     <a href="PERA8.pdf" target="_blank">Target Blank</a>
     <a href="PERA8.pdf" download>Download Attribute</a>
     <a href="PERA8.pdf" target="_blank" download>Target Blank And Download Attribute</a>
     
-    <button id="pop_up_window_btn">Pop-Up Window</button>
-    
+    <button id="popup_btn">Pop-Up Window</button>
+    <button id="popup_noext_btn">Pop-Up Window No File Extension</button>
+
+
     <div id="message1"></div>
     <div id="message2"></div>
   </body>
@@ -43,16 +46,20 @@
       `;
     }
 
-    document.getElementById("pop_up_window_btn").addEventListener("click", function(){
-      let popup = window.open("", "Pop Up Title", "width=800, height=800");
-      if (!popup || popup.closed || typeof popup.closed == "undefined"){
-        alert("Please turn off popup blocker");
-      } else {
-        popup.location.assign("PERA8.pdf");
-        popup.document.body.innerHTML = getPopupHTML();
-      }
-    });
+    function registerPopup(id, url){
+      document.getElementById(id).addEventListener("click", function(){
+        let popup = window.open("", "Pop Up Title", "width=800, height=800");
+        if (!popup || popup.closed || typeof popup.closed == "undefined"){
+          alert("Please turn off popup blocker");
+        } else {
+          popup.location.assign(url);
+          popup.document.body.innerHTML = getPopupHTML();
+        }
+      });
+    }
 
+    registerPopup("popup_btn", "PERA8.pdf");
+    registerPopup("popup_noext_btn", "PERA8");
 
     document.querySelector("#message1").innerText = "User Agent: " + navigator.userAgent;
     document.querySelector("#message2").innerText = "Is Standalone: " + navigator.standalone;
