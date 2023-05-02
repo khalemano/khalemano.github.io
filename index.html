@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      a {
+        padding: 1em;
+        display: block;
+      }
+
+      button {
+        padding: 1em;
+      }
+
+      div {
+        padding: 1em;
+      }
+    </style>
+  </head>
   <body>
+    <h1>PDF Download Test Links</h1>
 
-    <h1>My First Heading</h1>
-
-    <div style="padding:1em"><a href="PERA8.pdf">Plain HREF</a></div>
-    <div style="padding:1em"><a href="https://www.copera.org/files/1d6e77283/PERA9.pdf">HTTPS HREF</a></div>
-
-    <div style="padding:1em"><a href="PERA8.pdf" target="_blank">Target Blank</a></div>
-
-    <div style="padding:1em"><a href="PERA8.pdf" download>Download Attribute</a></div>
-    <div style="padding:1em"><a href="PERA8.pdf" target="_blank" download>Target Blank And Download Attribute</a></div>
-
-    <div style="padding:1em"><button id="pop_up_window_btn">Pop-Up Window</button></div>
-
+    <a href="PERA8.pdf">Plain HREF</a>
+    <a href="PERA8" target="_blank">Target Blank w/o File Extension</a>
+    <a href="PERA8.pdf" target="_blank">Target Blank</a>
+    <a href="PERA8.pdf" download>Download Attribute</a>
+    <a href="PERA8.pdf" target="_blank" download>Target Blank And Download Attribute</a>
+    
+    <button id="pop_up_window_btn">Pop-Up Window</button>
+    
     <div id="message1"></div>
     <div id="message2"></div>
   </body>
@@ -41,7 +54,7 @@
     });
 
 
-    document.querySelector("#message1").innerText = navigator.userAgent;
-    document.querySelector("#message2").innerText = navigator.standalone;
+    document.querySelector("#message1").innerText = "User Agent: " + navigator.userAgent;
+    document.querySelector("#message2").innerText = "Is Standalone: " + navigator.standalone;
   </script>
 </html>
