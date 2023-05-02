@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.github.khalemano.pwa",
+    "sha256_cert_fingerprints": ["BE:32:42:9A:A0:F2:A2:01:BF:72:8C:81:01:FE:09:BE:C5:31:97:4A:A9:19:B9:92:89:D5:4F:EE:81:9A:9E:B3"]
+  }
+}]
