@@ -2,10 +2,6 @@
 <html>
   <head>
     <style>
-      a {
-        padding: 1em;
-        display: block;
-      }
 
       button {
         margin: 1em;
@@ -20,11 +16,11 @@
   <body>
     <h1>PDF Download Test Links</h1>
 
-    <a href="PERA8.pdf">Plain HREF</a>
-    <a href="PERA8" target="_blank">Target Blank No File Extension</a>
-    <a href="PERA8.pdf" target="_blank">Target Blank</a>
-    <a href="PERA8.pdf" download>Download Attribute</a>
-    <a href="PERA8.pdf" target="_blank" download>Target Blank And Download Attribute</a>
+    <a href="PERA8.pdf">Plain HREF</a><br><br>
+    <a href="PERA8" target="_blank">Target Blank No File Extension</a><br><br>
+    <a href="PERA8.pdf" target="_blank">Target Blank</a><br><br>
+    <a href="PERA8.pdf" download>Download Attribute</a><br><br>
+    <a href="PERA8.pdf" target="_blank" download>Target Blank And Download Attribute</a><br><br>
     
     <button id="popup_btn">Pop-Up Window</button>
     <button id="popup_noext_btn">Pop-Up Window No File Extension</button>
@@ -32,6 +28,19 @@
 
     <div id="message1"></div>
     <div id="message2"></div>
+
+    <form name="login-form" action="index.html" style="border-style:solid; padding:1em">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" autocomplete="username"/>
+      <br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" autocomplete="current-password"/>
+      <br><br>
+      <input type="submit" value="Submit"/>
+    </form>
+
+
+
   </body>
   <script>
     function getPopupHTML(){
